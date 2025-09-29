@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.time.LocalDate;
-
+import java.util.stream.Collectors;
 
 public class SistemaBiblioteca {
     
@@ -111,7 +111,7 @@ public class SistemaBiblioteca {
         
         List<Emprestimo> emAndamento = emprestimos.stream()
             .filter(Emprestimo::estaEmAndamento)
-            .toList();
+            .collect(Collectors.toList());
 
         if (emAndamento.isEmpty()) {
             System.out.println("Nenhum empréstimo em andamento no momento.");
